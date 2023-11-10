@@ -6,7 +6,7 @@ const generateRandomAccountNumber = () => {
 
 const createAccount = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name,password,confirmPassword } = req.body.formData;
 
     let newAccountNumber = generateRandomAccountNumber();
 
@@ -22,6 +22,7 @@ const createAccount = async (req, res) => {
       name,
       accountNumber: newAccountNumber,
       balance: 0,
+      password
     });
     res.status(200).json({
       success: true,

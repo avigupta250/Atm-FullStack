@@ -13,6 +13,10 @@ const customerSchema=new Schema({
     balance:{
         type:Number,
     },
+    password:{
+        type:Number,
+        required:true
+    }
 
 })
 
